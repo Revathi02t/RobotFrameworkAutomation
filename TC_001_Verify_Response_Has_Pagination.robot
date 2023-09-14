@@ -15,7 +15,7 @@ TC_001_Verify_Response_Has_Pagination
   ${Status_Code}  Convert To String    ${response.status_code}
   ${Return_Value1}   Run Keyword And Return Status    Should Be Equal   ${Status_Code}    200
   Log    ${Return_Value1}
-  # Validating Total pages in response not equal to 1
+  # Validating Total pages in response not equal to 1 and Next Page should not be empty
   ${headers}    Set Variable    ${response.headers}
   Log  ${headers}
   ${pagination} =   Get From Dictionary  ${headers}  x-pagination-pages
