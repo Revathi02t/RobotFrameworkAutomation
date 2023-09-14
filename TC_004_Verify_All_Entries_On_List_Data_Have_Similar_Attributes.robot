@@ -19,7 +19,6 @@ TC_004_Verify_Response_Has_Similar_Attributes
   FOR    ${i}    IN    @{json}
       ${i_Keys}    Get Dictionary Keys  ${i}
       Log    ${i_Keys}
-      #Run Keyword If    @{i_Keys}  ==  @{Keys}
       Lists Should Be Equal     ${Keys}    ${i_Keys}
           Log    List Attributes are Same
           Continue For Loop
