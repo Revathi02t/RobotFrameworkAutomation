@@ -5,7 +5,6 @@ Library  Collections
 
 *** Variables ***
 ${Base_Url}  http://gorest.co.in/public/v2/users/
-${Schema_File}  TestSuite/Schema_File.json
 
 *** Test Cases ***
 TC_001_Verify_Response_Has_Pagination
