@@ -8,7 +8,7 @@ ${Base_Url}  http://gorest.co.in/public/v2/users/
 ${Id}  1
 
 *** Test Cases ***
-TC_003_Verify_Response_Data_Has_Email_Address
+TC_001_Verify_Response_Has_Pagination
   ${response}=  GET  ${Base_Url}    params=${Id}
   Log    ${response}
   # Validating Status Code
@@ -16,8 +16,8 @@ TC_003_Verify_Response_Data_Has_Email_Address
   ${Return_Value}  Should Be Equal   ${Status_Code}    200
 
   # Validating Total pages not equal to 1.
-  ${headers}    Set Variable    ${response.headers}
-  Log  ${headers}
+  ${Headers}    Set Variable    ${response.headers}
+  Log  ${Headers}
   ${pagination} =   Get From Dictionary  ${headers}  x-pagination-pages
   Log    ${pagination}
   Should Not Be Equal As Numbers   ${pagination}     1
