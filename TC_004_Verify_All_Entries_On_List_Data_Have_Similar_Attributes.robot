@@ -13,7 +13,7 @@ TC_004_Verify_Response_Has_Similar_Attributes
   ${response}=  GET  ${Base_Url}
   ${json}    Set Variable    ${response.json()}
   Log  ${json}
-  ${dict}    Set Variable    ${json}[0]
+  ${dict}    Set Variable    ${json[0]}
   ${Keys}    Get Dictionary Keys  ${dict}
   Log    ${Keys}
   FOR    ${i}    IN    @{json}
