@@ -14,7 +14,7 @@ TC_003_Verify_Response_Data_Has_Email_Address
   ${response}=  GET  ${Base_Url}    params=${Id}
   ${json}    Set Variable    ${response.json()}
   Log  ${json}
-  ${dict}    Set Variable    ${json}[0]
+  ${dict}    Set Variable    ${json[0]}
   Log  ${dict}
   ${Return_Value}  Get From Dictionary    ${dict}    ${email}
   Log  ${Return_Value}
